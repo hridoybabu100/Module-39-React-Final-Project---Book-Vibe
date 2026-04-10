@@ -1,16 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Components/Navbar/Navbar';
-import HomePages from '../Pages/Home-pages/HomePages';
-import Book from '../Pages/Book/Book';
+import Books from '../Pages/Books/Books';
 
 const Mainlayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Book></Book>
             <Outlet></Outlet>
-
+            
         </div>
     );
 };

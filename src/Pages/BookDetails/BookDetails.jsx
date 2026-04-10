@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+
+
 import { useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../Context/Bookprovider";
+import { useContext } from "react";
+
 
 const BookDetails = () => {
   const books = useLoaderData();
   // console.log(books);
+
+  const { handleRead,handleWishList } = useContext(BookContext);
+  console.log(handleRead,handleWishList, "ContextBook");
+  
+  
 
   const { bookId } = useParams();
   // console.log(bookId);
@@ -24,27 +33,9 @@ const BookDetails = () => {
     author,
   } = mainData;
 
-  const [storeBooks, setStoreBooks] = useState([]);
 
-  const handleRead = (currentBook) => {
-    //1. store book id or book object
-    //2. where store
-    //3. array or collection
-    //4. jodi array te already book ta thake tahole toast dekhabo.
-    //5. jodi book ta na thake tahole book ta amra dekhabo.
-    const isExistBook = storeBooks.find(
-      (book) => book.bookId === currentBook.bookId,
-    );
-    // console.log(isExitBook);
 
-    if (isExistBook) {
-      alert("Book already exits");
-    } else {
-      setStoreBooks([...storeBooks, currentBook]);
-    }
-
-    console.log(currentBook, "Book");
-  };
+ 
 
   return (
     <div className="grid grid-cols-2 shadow-sm gap-10  w-[85%] mx-auto my-10 p-10">
@@ -91,7 +82,7 @@ const BookDetails = () => {
           <button className="btn" onClick={() => handleRead(mainData)}>
             Read
           </button>
-          <button className="btn btn-primary">Wishlist</button>
+          <button className="btn btn-primary" onClick={() => handleWishList(mainData)}>Wishlist</button>
         </div>
       </div>
     </div>

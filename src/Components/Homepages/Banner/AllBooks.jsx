@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import BookCard from "../../UI/BookCard";
-const promiseData = fetch("/public/Data.json").then((res) => res.json());
+const promiseData = fetch("/Data.json").then((res) => res.json());
 
 const AllBooks = () => {
   const books = use(promiseData);
