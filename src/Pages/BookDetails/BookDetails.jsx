@@ -38,9 +38,9 @@ const BookDetails = () => {
  
 
   return (
-    <div className="grid grid-cols-2 shadow-sm gap-10  w-[85%] mx-auto my-10 p-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 shadow-sm gap-10  w-[85%] mx-auto my-10 p-10">
       <figure className="bg-zinc-200 flex justify-center items-center rounded-2xl">
-        <img src={image} alt="Album" className="h-100" />
+        <img src={image} alt="Album" className="h-60 p-5 lg:p-1 lg:h-100" />
       </figure>
       <div className="space-y-3">
         <h2 className="card-title text-3xl text-black">{bookName}</h2>
